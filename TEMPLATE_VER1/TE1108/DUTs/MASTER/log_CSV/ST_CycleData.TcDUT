@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.13">
+  <DUT Name="ST_CycleData" Id="{55f28d2e-fb51-4eb3-b909-a265f2991986}">
+    <Declaration><![CDATA[TYPE ST_CycleData :
+STRUCT
+//-----------------------------------------------------------------------------------GENERAL------------------------------------------------------------------------------------//	
+
+	bPass				: BOOL;
+	bFail				: BOOL;	
+	sDate				: STRING;	
+	sTime				: STRING;
+	
+	stHeightTest_CycleData : ARRAY[0..1] OF ST_HeightTest_CycleData;
+	stLeakTester_CycleData : ARRAY[0..1] OF ST_LeakTester_CycleData;
+	stCamera_CycleData		: ST_Camera_CycleData;
+
+
+	
+	
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

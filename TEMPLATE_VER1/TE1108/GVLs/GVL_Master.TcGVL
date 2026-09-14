@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.17">
+  <GVL Name="GVL_Master" Id="{ff1c03dd-d56c-490f-bced-572c30dff423}">
+    <Declaration><![CDATA[VAR_GLOBAL
+////////////////////////////////////////:	///////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////GENERIC/////////////////////////////////////////////////////////////////////////////////////
+
+	// PowerUP 
+	tonSystemPowerUP				:TON;
+	tSystemPowerUP_Time				:TIME								:=T#35S;
+	bSystemPoweringUP				:BOOL								:=TRUE; //Global System PowerUP Flag
+	
+	fbSystemShutDown     	        : NT_Shutdown;
+	stButtonsLamps					: ST_ButtonsLamps;
+	stPuls							: ST_Puls;		
+
+	stCSV_EventsHistory				: ST_CSV;
+	stCycleData						: ST_CycleData;
+	
+	stMACHINE						: ST_MACHINE;	//THIS STRUCTURE WILL DEFINDE THE PROCESS IN AUTO CYCLE DEPENDING OF WHAT MACHINE YOU ARE WORKING WITH
+													//THE bMachine boolean array will define the machine			//1. LT-RT: LEAK TEST RESERVOIR
+																													//2. LT-WH-VC LEAK TEST: FLUID PATH, HEIGHT TEST: FPB WELDING, VISION CHECK: EWIS FOAM
+																													//3. LT-WH LEAK TEST: RESERVOIR TO DOCKSEAL (VACUUM), HEIGHT TEST: ST WELDING
+																													//4. LT-WH(IPX8) LEAK TEST: IPX8 UPPER AND LOWER SHELL ASSEMBLY, HEIGHT TEST: US & LS WELDING
+																													//5. WH: HEIGHT TEST: FPB WELDING
+	bDoorClosingFlag				: BOOL;
+	bDoorOpeningFlag				: BOOL;
+	bProcessDoorClosedConditionFlag	: BOOL;
+	bProcessCylinderLockConditionFlag: BOOL;
+	tonSafety						: TON;
+	bMainDoor_AirFlag				: ARRAY[0..1] OF  BOOL;
+/////////////////////////////////////////////////////////////////////////////////////Event Log/////////////////////////////////////////////////////////////////////////////////////
+	
+	stStationEvents				: ARRAY[0..4] OF  ST_StationEvents;//0: GENERAL
+																	//1: Leak Test
+																	//1: Height Test
+																	//3: Vision Inspection
+																	//4: Cylinders
+	astActiveEvents				: ARRAY [0..50] OF ST_ActiveEvents;
+	stEventsAssigment			: ST_EventsAssigmentGeneral;
+
+/////////////////////////////////////////////////////////////////////////////////////MACHINE CONTROL////////////////////////////////////////////////////////////////////////////
+	
+	stMachineStatus					: ST_MachineStatus;	
+	stMasterCtrl					: ST_MasterCTRL;
+	bStatisticsTest					: ARRAY[0..6] OF  BOOL;
+	
+////////////////////////////////////////////////////////////////////////////////////SYSTEM////////////////////////////////////////////////////////////////////////////
+	stSystemTime				: TIMESTRUCT;
+	sSystemTime					: STRING(255);
+	sSystemDate					: STRING(255);
+	
+	bResetTest					: BOOL;
+	bTestFlag					: ARRAY[0..10] OF BOOL;
+
+
+	
+	
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

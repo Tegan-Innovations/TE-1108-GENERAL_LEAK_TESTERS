@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.17">
+  <POU Name="A_3_PRG_FaultHandling" Id="{1ed57a34-1c0a-4c7e-a0fc-90a123d0d2dc}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM A_3_PRG_FaultHandling
+VAR
+	
+
+	bEventsFlag					: ARRAY [0..100] OF BOOL;
+	i							: DINT;
+	Counter						: CTU;			
+
+
+
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[a_ACT_Set_Events();
+/////////////////////////////////////////////////////////////////////////////////////MASTER FAULT MONITORS////////////////////////////////////////////////////////////////////////////////////
+
+
+stMasterCtrl.bNoFault 												:= 	NOT stStationEvents[0].bFault AND NOT stStationEvents[1].bFault AND
+                                            							NOT stStationEvents[2].bFault AND NOT stStationEvents[3].bFault;
+
+stMasterCtrl.bCycleStopRequest										:= stStationEvents[0].bCycleStopRequest OR stStationEvents[0].bCycleStopRequest OR
+																		stStationEvents[0].bCycleStopRequest OR stStationEvents[0].bCycleStopRequest;
+
+
+]]></ST>
+    </Implementation>
+    <Action Name="a_ACT_Set_Events" Id="{42aebdbb-fe1e-4d30-8c60-8dfb7c659f09}">
+      <Implementation>
+        <ST><![CDATA[/////////////////////////////////////////////////////////////////////////////////////TwinSAFE/////////////////////////////////////////////////////////////////////////////////////
+
+stStationEvents[0].aEvents[0].bFault						:= TRUE;
+stStationEvents[0].aEvents[0].bEventFlag					:= stTwinSAFE.qAirErrorSignal;
+stStationEvents[0].aEvents[0].bEventText					:= 'Pressure Error';
+stStationEvents[0].aEvents[0].sSolution						:= 'Check Air Supply system';
+
+stStationEvents[0].aEvents[1].bFault						:= TRUE;
+stStationEvents[0].aEvents[1].bEventFlag					:= stTwinSAFE.qAirPressureAbove;
+stStationEvents[0].aEvents[1].bEventText					:= 'System overpressurized' ;
+stStationEvents[0].aEvents[1].sSolution						:= 'set the main valve to the right pressure';
+
+stStationEvents[0].aEvents[2].bFault						:= TRUE;
+stStationEvents[0].aEvents[2].bEventFlag					:= stTwinSAFE.qAirPressureBelow;
+stStationEvents[0].aEvents[2].bEventText					:= 'Not enough pressure in the system' ;
+stStationEvents[0].aEvents[2].sSolution						:= 'set the main valve to the right pressure and check the air supply';
+
+stStationEvents[0].aEvents[3].bFault						:= TRUE;
+stStationEvents[0].aEvents[3].bEventFlag					:= NOT dw_T04_EL1918.iEStopChannel1 AND dw_T04_EL1918.iEStopChannel2;
+stStationEvents[0].aEvents[3].bEventText					:= 'E-STOP CH1 malfunction' ;
+stStationEvents[0].aEvents[3].sSolution						:= 'Check E-STOP CH1';
+
+stStationEvents[0].aEvents[4].bFault						:= TRUE;
+stStationEvents[0].aEvents[4].bEventFlag					:= dw_T04_EL1918.iEStopChannel1 AND NOT dw_T04_EL1918.iEStopChannel2;
+stStationEvents[0].aEvents[4].bEventText					:= 'E-STOP CH2 malfunction' ;
+stStationEvents[0].aEvents[4].sSolution						:= 'Check E-STOP CH2';
+
+stStationEvents[0].aEvents[5].bFault						:= TRUE;
+stStationEvents[0].aEvents[5].bEventFlag					:= stTwinSAFE.qE_StopPressed;
+stStationEvents[0].aEvents[5].bEventText					:= 'E-STOP Pressed' ;
+stStationEvents[0].aEvents[5].sSolution						:= 'Release E-STOP';
+
+stStationEvents[0].aEvents[6].bFault						:= TRUE;
+stStationEvents[0].aEvents[6].bEventFlag					:= ((bMainDoor_AirFlag[0] AND tonSafety.Q) OR bMainDoor_AirFlag[1]) AND NOT stTwinSAFE.qSafetyOk;
+stStationEvents[0].aEvents[6].bEventText					:= 'Safe system error' ;
+stStationEvents[0].aEvents[6].sSolution						:= 'Check safety elements';
+
+stStationEvents[0].aEvents[8].bFault						:= TRUE;
+stStationEvents[0].aEvents[8].bEventFlag					:= stTwinSAFE.qProcessDoorUnSafe;
+stStationEvents[0].aEvents[8].bEventText					:= 'Process door movement unsafe' ;
+stStationEvents[0].aEvents[8].sSolution						:= 'Reset system';
+
+stStationEvents[0].aEvents[9].bFault						:= TRUE;
+stStationEvents[0].aEvents[9].bEventFlag					:= stTwinSAFE.qTwoHandsUnsafe;
+stStationEvents[0].aEvents[9].bEventText					:= 'Hands in unsafe position' ;
+stStationEvents[0].aEvents[9].sSolution						:= 'Reset system';
+
+stStationEvents[0].aEvents[25].bFault						:= TRUE;
+stStationEvents[0].aEvents[25].bEventFlag					:= NOT GVL_IO.dw_T04_EL1918.iD1MainDoorFB AND tonSafety.Q;
+stStationEvents[0].aEvents[25].bEventText					:= 'Door openned during initialization' ;
+stStationEvents[0].aEvents[25].sSolution					:= 'Close door and Reset system';
+
+
+/////////////////////////////////////////////////////////////////////////////////////Cards status/////////////////////////////////////////////////////////////////////////////////////
+
+stStationEvents[0].aEvents[10].bFault						:= TRUE;
+stStationEvents[0].aEvents[10].bEventFlag					:= NOT stMachineStatus.bSystemPowerUp AND dw_T01_EK1100.stTerminalInfo.nTerminal_State <> 8;
+stStationEvents[0].aEvents[10].bEventText					:= 'T01_EK1100 card in fault' ;
+stStationEvents[0].aEvents[10].sSolution					:= 'Reset System';
+
+stStationEvents[0].aEvents[11].bFault						:= TRUE;
+stStationEvents[0].aEvents[11].bEventFlag					:= NOT stMachineStatus.bSystemPowerUp AND dw_T02_EL6070.stTerminalInfo.nTerminal_State <> 8;
+stStationEvents[0].aEvents[11].bEventText					:= 'T02_EL6070 card in fault' ;
+stStationEvents[0].aEvents[11].sSolution					:= 'Reset System';
+
+stStationEvents[0].aEvents[12].bFault						:= TRUE;
+stStationEvents[0].aEvents[12].bEventFlag					:= NOT stMachineStatus.bSystemPowerUp AND dw_T03_EL6910.stTerminalInfo.nTerminal_State <> 8;
+stStationEvents[0].aEvents[12].bEventText					:= 'T03_EL6910 card in fault' ;
+stStationEvents[0].aEvents[12].sSolution					:= 'Reset System';
+
+stStationEvents[0].aEvents[13].bFault						:= TRUE;
+stStationEvents[0].aEvents[13].bEventFlag					:= NOT stMachineStatus.bSystemPowerUp AND dw_T04_EL1918.stTerminalInfo.nTerminal_State <> 8;
+stStationEvents[0].aEvents[13].bEventText					:= 'T04_EL1918 card in fault' ;
+stStationEvents[0].aEvents[13].sSolution					:= 'Reset System';
+
+stStationEvents[0].aEvents[14].bFault						:= TRUE;
+stStationEvents[0].aEvents[14].bEventFlag					:= NOT stMachineStatus.bSystemPowerUp AND dw_T05_EL1918.stTerminalInfo.nTerminal_State <> 8;
+stStationEvents[0].aEvents[14].bEventText					:= 'T05_EL1918 card in fault' ;
+stStationEvents[0].aEvents[14].sSolution					:= 'Reset System';
+
+stStationEvents[0].aEvents[15].bFault						:= TRUE;
+stStationEvents[0].aEvents[15].bEventFlag					:= NOT stMachineStatus.bSystemPowerUp AND dw_T06_EL2904.stTerminalInfo.nTerminal_State <> 8;
+stStationEvents[0].aEvents[15].bEventText					:= 'T06_EL2904 card in fault' ;
+stStationEvents[0].aEvents[15].sSolution					:= 'Reset System';
+
+stStationEvents[0].aEvents[16].bFault						:= TRUE;
+stStationEvents[0].aEvents[16].bEventFlag					:= NOT stMachineStatus.bSystemPowerUp AND dw_T07_EL9410.stTerminalInfo.nTerminal_State <> 8;
+stStationEvents[0].aEvents[16].bEventText					:= 'T07_EL9410 card in fault' ;
+stStationEvents[0].aEvents[16].sSolution					:= 'Reset System';
+
+stStationEvents[0].aEvents[17].bFault						:= TRUE;
+stStationEvents[0].aEvents[17].bEventFlag					:= NOT stMachineStatus.bSystemPowerUp AND dw_T08_EL1809.stTerminalInfo.nTerminal_State <> 8;
+stStationEvents[0].aEvents[17].bEventText					:= 'T08_EL1809 card in fault' ;
+stStationEvents[0].aEvents[17].sSolution					:= 'Reset System';
+
+stStationEvents[0].aEvents[18].bFault						:= TRUE;
+stStationEvents[0].aEvents[18].bEventFlag					:= NOT stMachineStatus.bSystemPowerUp AND dw_T09_EL2809.stTerminalInfo.nTerminal_State <> 8;
+stStationEvents[0].aEvents[18].bEventText					:= 'T09_EL2809 card in fault' ;
+stStationEvents[0].aEvents[18].sSolution					:= 'Reset System';
+
+stStationEvents[0].aEvents[19].bFault						:= TRUE;
+stStationEvents[0].aEvents[19].bEventFlag					:= NOT stMachineStatus.bSystemPowerUp AND dw_T10_EL2809.stTerminalInfo.nTerminal_State <> 8;
+stStationEvents[0].aEvents[19].bEventText					:= 'T10_EL2809 card in fault' ;
+stStationEvents[0].aEvents[19].sSolution					:= 'Reset System';
+
+stStationEvents[0].aEvents[20].bFault						:= TRUE;
+stStationEvents[0].aEvents[20].bEventFlag					:= NOT stMachineStatus.bSystemPowerUp AND dw_T11_EL3058.stTerminalInfo.nTerminal_State <> 8;
+stStationEvents[0].aEvents[20].bEventText					:= 'T11_EL3058 card in fault' ;
+stStationEvents[0].aEvents[20].sSolution					:= 'Reset System';
+
+stStationEvents[0].aEvents[22].bFault						:= TRUE;
+stStationEvents[0].aEvents[22].bEventFlag					:= NOT stMachineStatus.bSystemPowerUp AND dw_T12_EL1918.stTerminalInfo.nTerminal_State <> 8;
+stStationEvents[0].aEvents[22].bEventText					:= 'T12_EL1918 card in fault' ;
+stStationEvents[0].aEvents[22].sSolution					:= 'Reset System';
+
+stStationEvents[0].aEvents[23].bFault						:= TRUE;
+stStationEvents[0].aEvents[23].bEventFlag					:= NOT stMachineStatus.bSystemPowerUp AND dw_T13_EL6633.stTerminalInfo.nTerminal_State <> 8;
+stStationEvents[0].aEvents[23].bEventText					:= 'T13_EL6633 card in fault' ;
+stStationEvents[0].aEvents[23].sSolution					:= 'Reset System';
+
+
+
+
+]]></ST>
+      </Implementation>
+    </Action>
+  </POU>
+</TcPlcObject>

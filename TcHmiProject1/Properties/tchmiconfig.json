@@ -1,0 +1,548 @@
+{
+  "$schema": "./../../Packages/Beckhoff.TwinCAT.HMI.Framework.14.3.431/runtimes/native1.12-tchmi/Schema/TchmiConfig.Schema.json",
+  "basePath": "./Beckhoff.TwinCAT.HMI.Framework",
+  "scaleMode": "None",
+  "startupView": "Desktop.view",
+  "loginPage": "",
+  "splash": {
+    "versionSource": "Framework"
+  },
+  "projectVersion": "1.0.0.0",
+  "tcHmiServer": {
+    "websocketIntervalTime": 500,
+    "websocketTimeout": 20000,
+    "websocketSystemTimeout": 60000,
+    "websocketSubscriptionMode": null,
+    "disableOptionalSystemSubscriptions": false
+  },
+  "activeTheme": "Base",
+  "themes": {
+    "Base-Dark": {
+      "resources": [
+        {
+          "name": "Themes/Base-Dark/Base-DarkStyle.css",
+          "description": "",
+          "type": "Stylesheet"
+        },
+        {
+          "name": "Themes/Base-Dark/Base-Dark.theme",
+          "description": "",
+          "type": "ThemedValues"
+        }
+      ],
+      "replacesThemeForControls": [],
+      "replacesThemeForPackageComponents": []
+    },
+    "Base": {
+      "resources": [
+        {
+          "name": "Themes/Base/Base.theme",
+          "description": "",
+          "type": "ThemedValues"
+        },
+        {
+          "name": "Themes/Base/BaseStyle.css",
+          "description": "",
+          "type": "Stylesheet"
+        }
+      ],
+      "replacesThemeForControls": [],
+      "replacesThemeForPackageComponents": []
+    }
+  },
+  "dependencyFiles": [
+    {
+      "name": "Fonts/Fonts.css",
+      "description": "",
+      "type": "Stylesheet"
+    },
+    {
+      "name": "Contents/CSS_JAVA/CssBehind1.css",
+      "description": "",
+      "type": "Stylesheet"
+    },
+    {
+      "name": "Contents/CSS_JAVA/PDF Maker/relatori.js",
+      "description": "",
+      "type": "JavaScript"
+    },
+    {
+      "name": "Contents/CSS_JAVA/PDF Maker/jspdf.min.js",
+      "description": "",
+      "type": "JavaScript"
+    },
+    {
+      "name": "Contents/CSS_JAVA/RowClassesProvider.js",
+      "description": "",
+      "type": "JavaScript"
+    },
+    {
+      "name": "Contents/CSS_JAVA/Enable buttons.js",
+      "description": "",
+      "type": "JavaScript"
+    }
+  ],
+  "userControls": [
+    {
+      "url": "Contents/UserControl/led_RedAndGreen_1In.usercontrol"
+    },
+    {
+      "url": "Contents/UserControl/led_RedAndGreen_2In.usercontrol"
+    },
+    {
+      "url": "Contents/UserControl/PopUp/Acknowledge.usercontrol"
+    },
+    {
+      "url": "Contents/UserControl/PopUp/YesNo.usercontrol"
+    }
+  ],
+  "controls": [],
+  "content": [
+    {
+      "url": "Contents/1_Main.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Contents/10_Manage_Users.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Contents/12_Operatinal_Manual.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Contents/13_Develop.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Contents/2_Menu.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Contents/3_IO.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Contents/4_Events.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Contents/5_Manual.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Contents/6_Settings.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Contents/7_Statistics.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Contents/8_Info.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Contents/9_Data_History.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Contents/Events/CycleStopFaults.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Contents/Events/History.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Contents/Events/ImmediateFaults.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Contents/Events/Messages_CycleStopReq.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Contents/M/HeadMenu.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Contents/Manual/1_Station1.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Contents/Manual/2_Station2.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Contents/Manual/3_Station3.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Contents/popup/popup1_RejectedPart.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Contents/popup/popup2_ChangeSettings.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Contents/Settings/1_SettingsStation1.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Contents/Settings/2_SettingsStation2.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Contents/Settings/3_SettingsStation3.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Contents/Settings/4_Timers.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    }
+  ],
+  "views": [
+    {
+      "url": "Desktop.view",
+      "preload": false,
+      "keepAlive": false,
+      "preloadBindings": false
+    }
+  ],
+  "userFunctions": [
+    {
+      "url": "Contents/CSS_JAVA/RowClassesProvider.js"
+    }
+  ],
+  "symbols": {
+    "internal": {
+      "MainFrame": {
+        "value": 0,
+        "type": "tchmi:general#/definitions/DINT",
+        "persist": false,
+        "readonly": false
+      },
+      "nIOScreen": {
+        "value": 0,
+        "type": "tchmi:general#/definitions/INT",
+        "persist": false,
+        "readonly": false
+      },
+      "nEventsScreen": {
+        "value": 0,
+        "type": "tchmi:general#/definitions/INT",
+        "persist": false,
+        "readonly": false
+      },
+      "UserToChange": {
+        "value": "",
+        "type": "tchmi:general#/definitions/String",
+        "persist": false,
+        "readonly": false
+      },
+      "User": {
+        "value": "",
+        "type": "tchmi:general#/definitions/String",
+        "persist": false,
+        "readonly": false
+      },
+      "Password": {
+        "value": "",
+        "type": "tchmi:general#/definitions/String",
+        "persist": false,
+        "readonly": false
+      },
+      "AddGroupID": {
+        "value": "",
+        "type": "tchmi:general#/definitions/String",
+        "persist": false,
+        "readonly": false
+      },
+      "RemGroupID": {
+        "value": "",
+        "type": "tchmi:general#/definitions/String",
+        "persist": false,
+        "readonly": false
+      },
+      "CreateUserEnable": {
+        "value": false,
+        "type": "tchmi:general#/definitions/BOOL",
+        "persist": false,
+        "readonly": false
+      },
+      "UserList": {
+        "type": "tchmi:general#/definitions/Array",
+        "persist": false,
+        "readonly": false
+      },
+      "Groups": {
+        "type": "tchmi:general#/definitions/Array",
+        "persist": false,
+        "readonly": false
+      },
+      "OpenPopUp": {
+        "value": false,
+        "type": "tchmi:general#/definitions/BOOL",
+        "persist": false,
+        "readonly": false
+      },
+      "delaytest": {
+        "value": false,
+        "type": "tchmi:general#/definitions/BOOL",
+        "persist": false,
+        "readonly": false
+      }
+    },
+    "themedResources": {},
+    "timer": {},
+    "package": {}
+  },
+  "intervals": {},
+  "trigger": [
+    {
+      "event": "%s%Diagnostics::UPTIME%/s%",
+      "actions": [
+        {
+          "objectType": "WriteToSymbol",
+          "active": true,
+          "symbolExpression": "%s%PLC1.GVL_HMI.sUserName%/s%",
+          "value": {
+            "objectType": "Symbol",
+            "valueType": "tchmi:general#/definitions/String",
+            "symbolExpression": "%s%GetCurrentUser::name%/s%"
+          },
+          "asyncWait": true
+        },
+        {
+          "objectType": "WriteToSymbol",
+          "active": true,
+          "symbolExpression": "%s%PLC1.GVL_HMI.sUserGroupIn%/s%",
+          "value": {
+            "objectType": "Symbol",
+            "valueType": "tchmi:general#/definitions/String",
+            "symbolExpression": "%s%GetCurrentUser::groups%/s%"
+          },
+          "asyncWait": true
+        },
+        {
+          "objectType": "WriteToSymbol",
+          "active": true,
+          "symbolExpression": "%s%PLC1.GVL_HMI.nMainRegion%/s%",
+          "value": {
+            "objectType": "Symbol",
+            "valueType": "tchmi:general#/definitions/String",
+            "symbolExpression": "%i%MainFrame%/i%"
+          },
+          "asyncWait": true
+        },
+        {
+          "objectType": "Condition",
+          "active": true,
+          "parts": [
+            {
+              "if": [
+                {
+                  "compare1": {
+                    "objectType": "Symbol",
+                    "valueType": "tchmi:general#/definitions/BOOL",
+                    "symbolExpression": "%s%PLC1.GVL_Persistent.stJavasCriptPDF::bMakePDF%/s%"
+                  },
+                  "compare2": {
+                    "objectType": "StaticValue",
+                    "valueType": "tchmi:general#/definitions/BOOL",
+                    "value": true
+                  },
+                  "compareOperator": "==",
+                  "logic": null
+                }
+              ],
+              "then": [
+                {
+                  "objectType": "JavaScript",
+                  "active": true,
+                  "sourceLines": [
+                    "var symbol = new TcHmi.Symbol('%s%PLC1.GVL_Persistent.stJavasCriptPDF%/s%');",
+                    "    symbol.readEx(function (data) {",
+                    "        if (data.error === TcHmi.Errors.NONE) {",
+                    "            // Handle result value... ",
+                    "            var value = data.value;",
+                    "            gerarRelatorioPDF(value);",
+                    "            console.log(value);",
+                    "        } else {",
+                    "            // Handle error... ",
+                    "        }",
+                    "    });"
+                  ],
+                  "injectContextObject": false,
+                  "asyncWait": true,
+                  "waitMode": "Synchronous"
+                }
+              ]
+            },
+            {
+              "else": []
+            }
+          ],
+          "asyncWait": true
+        }
+      ]
+    }
+  ],
+  "actionTemplates": [],
+  "languages": {
+    "de": "Localization/de.localization",
+    "en": "Localization/en.localization"
+  },
+  "languageFallback": "",
+  "disableLoadingOptimization": false,
+  "creatorSettings": {
+    "viewport": {
+      "defaultWidth": 800,
+      "defaultHeight": 600
+    }
+  },
+  "binding": {
+    "symbolError": "Ignore",
+    "symbolWriteError": "ReadBack"
+  },
+  "packages": [
+    {
+      "name": "Beckhoff.TwinCAT.HMI.Controls",
+      "basePath": "/Beckhoff.TwinCAT.HMI.Controls",
+      "symbols": {
+        "package": {}
+      }
+    },
+    {
+      "name": "Beckhoff.TwinCAT.HMI.Framework",
+      "basePath": "/Beckhoff.TwinCAT.HMI.Framework",
+      "symbols": {
+        "package": {}
+      }
+    },
+    {
+      "name": "Beckhoff.TwinCAT.HMI.Functions",
+      "basePath": "/Beckhoff.TwinCAT.HMI.Functions",
+      "symbols": {
+        "package": {}
+      }
+    },
+    {
+      "name": "Beckhoff.TwinCAT.HMI.PDFViewer",
+      "basePath": "/Beckhoff.TwinCAT.HMI.PDFViewer",
+      "symbols": {
+        "package": {}
+      }
+    }
+  ],
+  "keyboardLayouts": [
+    {
+      "url": "KeyboardLayouts/German - compact.keyboard.json"
+    },
+    {
+      "url": "KeyboardLayouts/Numpad (plusminus).keyboard.json"
+    },
+    {
+      "url": "KeyboardLayouts/US - compact.keyboard.json"
+    }
+  ],
+  "systemKeyboard": {
+    "providerName": "",
+    "autoOpen": false,
+    "projectKeyboardMapping": {
+      "de": {
+        "text": "KeyboardLayouts/German - compact.keyboard.json",
+        "decimal": "KeyboardLayouts/Numpad (plusminus).keyboard.json",
+        "numeric": ""
+      },
+      "en": {
+        "text": "KeyboardLayouts/US - compact.keyboard.json",
+        "decimal": "KeyboardLayouts/Numpad (plusminus).keyboard.json",
+        "numeric": ""
+      }
+    }
+  },
+  "systemPopups": {
+    "providerName": "Beckhoff.TcHmiPopups"
+  }
+}
