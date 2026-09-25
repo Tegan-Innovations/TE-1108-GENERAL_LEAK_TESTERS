@@ -35,7 +35,7 @@ stStatisticsLT[3]			:= stStatisticsHMI[3];
 
 bOpenRejectDialog			:= bRejectPartDialog[0] OR bRejectPartDialog[1] OR bRejectPartDialog[2];
 
-bProcessCylinderDownEnable	:= dw_T08_EL1809.iPartPresentNest1 AND dw_T08_EL1809.iPartPresentNest2 AND dw_T05_EL1918.iProcessDoorFB;
+bProcessCylinderDownEnable	:= ((dw_T08_EL1809.iPartPresentNest1 AND dw_T08_EL1809.iPartPresentNest2) OR NOT abMachineDefinition[3]) AND dw_T05_EL1918.iProcessDoorFB;
 
 srRejectChuteFull(SET1 := stStationEvents[0].aEvents[18].bEventTimer.Q, RESET := bEmptyRejectChuteAcknowledge AND NOT dw_T08_EL1809.iRejectSensor , Q1 => bEmptyRejectChute);
 	
