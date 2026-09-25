@@ -209,8 +209,8 @@ IF bProcessDoor_Down AND stTwinSAFE.qTwoHandsSafe THEN
 	bCloseDoorHMI					:= TRUE; 
 	bProcessDoor_Down				:= FALSE;
 	
-ELSIF bDoorClosed  OR NOT stMachineStatus.bManualMode THEN
-
+ELSIF bDoorClosed OR (nMainRegion <> 6 AND nMainRegion <> 5) THEN
+	
 	 bCloseDoorHMI					:= FALSE;
 	 bProcessDoor_Down				:= FALSE;
 
@@ -221,7 +221,7 @@ IF bProcessDoor_UP THEN
 	bOpenDoorHMI					:= TRUE;
 	
 	
-ELSIF bDoorOpened OR  NOT stMachineStatus.bManualMode THEN
+ELSIF bDoorOpened THEN//OR  NOT stMachineStatus.bManualMode THEN
 
 	bOpenDoorHMI					:= FALSE;	 
 	
