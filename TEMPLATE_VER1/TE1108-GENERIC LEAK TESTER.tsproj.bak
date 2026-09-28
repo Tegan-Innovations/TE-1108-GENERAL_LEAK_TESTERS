@@ -2,6 +2,15 @@
 <TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.22">
 	<DataTypes>
 		<DataType>
+			<Name GUID="{22728B82-A99E-1178-70C3-33731C966BD6}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..10] OF BOOL</Name>
+			<BitSize>80</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+			<ArrayInfo>
+				<LBound>1</LBound>
+				<Elements>10</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
 			<Name GUID="{064EA673-04B6-D0C1-CD14-82E56022843A}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..4] OF BOOL</Name>
 			<BitSize>32</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
@@ -1160,11 +1169,143 @@
 		</System>
 		<Plc>
 			<Project GUID="{997013A6-75D1-424B-98F5-A30289B2B96E}" Name="TE1108" PrjFilePath="TE1108\TE1108.plcproj" TmcFilePath="TE1108\TE1108.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{87F80A2F-6D62-3277-E498-ADC859B1EEA1}" TmcPath="TE1108\TE1108.tmc">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{20FF1B08-510C-8137-29C1-C90BEE6C346A}" TmcPath="TE1108\TE1108.tmc">
 					<Name>TE1108 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="2" AreaNo="1">
 						<Name>PlcTask Outputs</Name>
+						<Var>
+							<Name>GVL_IO.Camera1_IO.bTrigger</Name>
+							<Comment><![CDATA[////////////////////////////////////////////////////////////OUTPUTS////////////////////////////////////////////////////////////////////]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera1_IO.bReset</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera1_IO.bSetTreshold</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera1_IO.bResultReadyAck</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera1_IO.bSettingNo</Name>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera1_IO.bSettingVal</Name>
+							<Type>UDINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera1_IO.bResetStatistics</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera1_IO.bClearBuffer</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera2_IO.bTrigger</Name>
+							<Comment><![CDATA[////////////////////////////////////////////////////////////OUTPUTS////////////////////////////////////////////////////////////////////]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera2_IO.bReset</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera2_IO.bSetTreshold</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera2_IO.bResultReadyAck</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera2_IO.bSettingNo</Name>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera2_IO.bSettingVal</Name>
+							<Type>UDINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera2_IO.bResetStatistics</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera2_IO.bClearBuffer</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera3_IO.bTrigger</Name>
+							<Comment><![CDATA[////////////////////////////////////////////////////////////OUTPUTS////////////////////////////////////////////////////////////////////]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera3_IO.bReset</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera3_IO.bSetTreshold</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera3_IO.bResultReadyAck</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera3_IO.bSettingNo</Name>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera3_IO.bSettingVal</Name>
+							<Type>UDINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera3_IO.bResetStatistics</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera3_IO.bClearBuffer</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera4_IO.bTrigger</Name>
+							<Comment><![CDATA[////////////////////////////////////////////////////////////OUTPUTS////////////////////////////////////////////////////////////////////]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera4_IO.bReset</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera4_IO.bSetTreshold</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera4_IO.bResultReadyAck</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera4_IO.bSettingNo</Name>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera4_IO.bSettingVal</Name>
+							<Type>UDINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera4_IO.bResetStatistics</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera4_IO.bClearBuffer</Name>
+							<Type>BOOL</Type>
+						</Var>
 						<Var>
 							<Name>GVL_IO.dw_T06_EL2904.qEnableAirSupply_PSR1</Name>
 							<Comment><![CDATA[ EL2904 channel 1]]></Comment>
@@ -1490,144 +1631,176 @@
 							<Type GUID="{481A0C15-D2DB-59F6-F498-C30AA9C1998C}">ARRAY [0..7] OF BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.Camera1_IO.bTrigger</Name>
-							<Comment><![CDATA[////////////////////////////////////////////////////////////OUTPUTS////////////////////////////////////////////////////////////////////]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera1_IO.bReset</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera1_IO.bSetTreshold</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera1_IO.bResultReadyAck</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera1_IO.bSettingNo</Name>
-							<Type>UINT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera1_IO.bSettingVal</Name>
-							<Type>UDINT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera1_IO.bResetStatistics</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera1_IO.bClearBuffer</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera2_IO.bTrigger</Name>
-							<Comment><![CDATA[////////////////////////////////////////////////////////////OUTPUTS////////////////////////////////////////////////////////////////////]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera2_IO.bReset</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera2_IO.bSetTreshold</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera2_IO.bResultReadyAck</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera2_IO.bSettingNo</Name>
-							<Type>UINT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera2_IO.bSettingVal</Name>
-							<Type>UDINT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera2_IO.bResetStatistics</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera2_IO.bClearBuffer</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera3_IO.bTrigger</Name>
-							<Comment><![CDATA[////////////////////////////////////////////////////////////OUTPUTS////////////////////////////////////////////////////////////////////]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera3_IO.bReset</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera3_IO.bSetTreshold</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera3_IO.bResultReadyAck</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera3_IO.bSettingNo</Name>
-							<Type>UINT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera3_IO.bSettingVal</Name>
-							<Type>UDINT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera3_IO.bResetStatistics</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera3_IO.bClearBuffer</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera4_IO.bTrigger</Name>
-							<Comment><![CDATA[////////////////////////////////////////////////////////////OUTPUTS////////////////////////////////////////////////////////////////////]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera4_IO.bReset</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera4_IO.bSetTreshold</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera4_IO.bResultReadyAck</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera4_IO.bSettingNo</Name>
-							<Type>UINT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera4_IO.bSettingVal</Name>
-							<Type>UDINT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera4_IO.bResetStatistics</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera4_IO.bClearBuffer</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
 							<Name>GVL_IO.Probes.abPresetProbe</Name>
 							<Type>DINT</Type>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
+						<Var>
+							<Name>GVL_IO.Camera1_IO.bResultReady</Name>
+							<Comment><![CDATA[////////////////////////////////////////////////////////////INPUTS////////////////////////////////////////////////////////////////////]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera1_IO.bTriggerFail</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera1_IO.bError</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera1_IO.bAlarm</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera1_IO.bBusy</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera1_IO.bRun</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera1_IO.bReady</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera1_IO.bTotalResult</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera1_IO.nScore</Name>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera1_IO.abInspectionResult</Name>
+							<Type GUID="{22728B82-A99E-1178-70C3-33731C966BD6}">ARRAY [1..10] OF BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera2_IO.bResultReady</Name>
+							<Comment><![CDATA[////////////////////////////////////////////////////////////INPUTS////////////////////////////////////////////////////////////////////]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera2_IO.bTriggerFail</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera2_IO.bError</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera2_IO.bAlarm</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera2_IO.bBusy</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera2_IO.bRun</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera2_IO.bReady</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera2_IO.bTotalResult</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera2_IO.nScore</Name>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera2_IO.abInspectionResult</Name>
+							<Type GUID="{22728B82-A99E-1178-70C3-33731C966BD6}">ARRAY [1..10] OF BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera3_IO.bResultReady</Name>
+							<Comment><![CDATA[////////////////////////////////////////////////////////////INPUTS////////////////////////////////////////////////////////////////////]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera3_IO.bTriggerFail</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera3_IO.bError</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera3_IO.bAlarm</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera3_IO.bBusy</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera3_IO.bRun</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera3_IO.bReady</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera3_IO.bTotalResult</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera3_IO.nScore</Name>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera3_IO.abInspectionResult</Name>
+							<Type GUID="{22728B82-A99E-1178-70C3-33731C966BD6}">ARRAY [1..10] OF BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera4_IO.bResultReady</Name>
+							<Comment><![CDATA[////////////////////////////////////////////////////////////INPUTS////////////////////////////////////////////////////////////////////]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera4_IO.bTriggerFail</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera4_IO.bError</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera4_IO.bAlarm</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera4_IO.bBusy</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera4_IO.bRun</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera4_IO.bReady</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera4_IO.bTotalResult</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera4_IO.nScore</Name>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera4_IO.abInspectionResult</Name>
+							<Type GUID="{22728B82-A99E-1178-70C3-33731C966BD6}">ARRAY [1..10] OF BOOL</Type>
+						</Var>
 						<Var>
 							<Name>GVL_IO.dw_T01_EK1100.stTerminalInfo.nTerminal_State</Name>
 							<Comment><![CDATA[ Terminal State from IO Terminal Info Data]]></Comment>
@@ -2450,154 +2623,6 @@
 						<Var>
 							<Name>GVL_IO.LeakTester2_IO.sti28LiveMeasurement.inPrecisionCode4</Name>
 							<Type>USINT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera1_IO.bResultReady</Name>
-							<Comment><![CDATA[////////////////////////////////////////////////////////////INPUTS////////////////////////////////////////////////////////////////////]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera1_IO.bTriggerFail</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera1_IO.bError</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera1_IO.bAlarm</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera1_IO.bBusy</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera1_IO.bRun</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera1_IO.bReady</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera1_IO.bTotalResult</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera1_IO.nScore</Name>
-							<Type>UINT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera2_IO.bResultReady</Name>
-							<Comment><![CDATA[////////////////////////////////////////////////////////////INPUTS////////////////////////////////////////////////////////////////////]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera2_IO.bTriggerFail</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera2_IO.bError</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera2_IO.bAlarm</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera2_IO.bBusy</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera2_IO.bRun</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera2_IO.bReady</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera2_IO.bTotalResult</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera2_IO.nScore</Name>
-							<Type>UINT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera3_IO.bResultReady</Name>
-							<Comment><![CDATA[////////////////////////////////////////////////////////////INPUTS////////////////////////////////////////////////////////////////////]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera3_IO.bTriggerFail</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera3_IO.bError</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera3_IO.bAlarm</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera3_IO.bBusy</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera3_IO.bRun</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera3_IO.bReady</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera3_IO.bTotalResult</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera3_IO.nScore</Name>
-							<Type>UINT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera4_IO.bResultReady</Name>
-							<Comment><![CDATA[////////////////////////////////////////////////////////////INPUTS////////////////////////////////////////////////////////////////////]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera4_IO.bTriggerFail</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera4_IO.bError</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera4_IO.bAlarm</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera4_IO.bBusy</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera4_IO.bRun</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera4_IO.bReady</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera4_IO.bTotalResult</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera4_IO.nScore</Name>
-							<Type>UINT</Type>
 						</Var>
 						<Var>
 							<Name>GVL_IO.Probes.bGeneralError</Name>
@@ -13502,6 +13527,8 @@ Submodule Info: Barcode_data
 				<Link VarA="PlcTask Outputs^GVL_IO.dw_T09_EL2809.qStartButtonLED" VarB="Channel 1^Output"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Profinet1 (EL6633)^camera-1">
+				<Link VarA="PlcTask Inputs^GVL_IO.Camera1_IO.abInspectionResult[1]" VarB="API^Term 97 (Device Result Bits)^Subterm 113 (Device Result Bits)^Inputs^Device Result Bits Register1^Tool1"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.Camera1_IO.abInspectionResult[2]" VarB="API^Term 97 (Device Result Bits)^Subterm 113 (Device Result Bits)^Inputs^Device Result Bits Register1^Tool2"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.Camera1_IO.bAlarm" VarB="API^Term 96 (Command Status Bits)^Subterm 112 (Command Status Bits)^Inputs^Command Status Bits Register3^Warning"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.Camera1_IO.bBusy" VarB="API^Term 96 (Command Status Bits)^Subterm 112 (Command Status Bits)^Inputs^Command Status Bits Register2^Busy"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.Camera1_IO.bError" VarB="API^Term 96 (Command Status Bits)^Subterm 112 (Command Status Bits)^Inputs^Command Status Bits Register3^Error"/>
@@ -13521,6 +13548,8 @@ Submodule Info: Barcode_data
 				<Link VarA="PlcTask Outputs^GVL_IO.Camera1_IO.bTrigger" VarB="API^Term 94 (Command Control)^Subterm 110 (Command Control)^Outputs^Command Control Register0^Trigger"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Profinet1 (EL6633)^camera-2">
+				<Link VarA="PlcTask Inputs^GVL_IO.Camera2_IO.abInspectionResult[1]" VarB="API^Term 170 (Device Result Bits)^Subterm 188 (Device Result Bits)^Inputs^Device Result Bits Register1^Tool1"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.Camera2_IO.abInspectionResult[2]" VarB="API^Term 170 (Device Result Bits)^Subterm 188 (Device Result Bits)^Inputs^Device Result Bits Register1^Tool2"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.Camera2_IO.bAlarm" VarB="API^Term 169 (Command Status Bits)^Subterm 187 (Command Status Bits)^Inputs^Command Status Bits Register3^Warning"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.Camera2_IO.bBusy" VarB="API^Term 169 (Command Status Bits)^Subterm 187 (Command Status Bits)^Inputs^Command Status Bits Register2^Busy"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.Camera2_IO.bError" VarB="API^Term 169 (Command Status Bits)^Subterm 187 (Command Status Bits)^Inputs^Command Status Bits Register3^Error"/>
@@ -13540,6 +13569,8 @@ Submodule Info: Barcode_data
 				<Link VarA="PlcTask Outputs^GVL_IO.Camera2_IO.bTrigger" VarB="API^Term 167 (Command Control)^Subterm 185 (Command Control)^Outputs^Command Control Register0^Trigger"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Profinet1 (EL6633)^camera-3">
+				<Link VarA="PlcTask Inputs^GVL_IO.Camera3_IO.abInspectionResult[1]" VarB="API^Term 24 (Device Result Bits)^Subterm 38 (Device Result Bits)^Inputs^Device Result Bits Register1^Tool1"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.Camera3_IO.abInspectionResult[2]" VarB="API^Term 24 (Device Result Bits)^Subterm 38 (Device Result Bits)^Inputs^Device Result Bits Register1^Tool2"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.Camera3_IO.bAlarm" VarB="API^Term 23 (Command Status Bits)^Subterm 37 (Command Status Bits)^Inputs^Command Status Bits Register3^Warning"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.Camera3_IO.bBusy" VarB="API^Term 23 (Command Status Bits)^Subterm 37 (Command Status Bits)^Inputs^Command Status Bits Register2^Busy"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.Camera3_IO.bError" VarB="API^Term 23 (Command Status Bits)^Subterm 37 (Command Status Bits)^Inputs^Command Status Bits Register3^Error"/>
@@ -13559,6 +13590,8 @@ Submodule Info: Barcode_data
 				<Link VarA="PlcTask Outputs^GVL_IO.Camera3_IO.bTrigger" VarB="API^Term 21 (Command Control)^Subterm 35 (Command Control)^Outputs^Command Control Register0^Trigger"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Profinet1 (EL6633)^camera-4">
+				<Link VarA="PlcTask Inputs^GVL_IO.Camera4_IO.abInspectionResult[1]" VarB="API^Term 11 (Device Result Bits)^Subterm 23 (Device Result Bits)^Inputs^Device Result Bits Register1^Tool1"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.Camera4_IO.abInspectionResult[2]" VarB="API^Term 11 (Device Result Bits)^Subterm 23 (Device Result Bits)^Inputs^Device Result Bits Register1^Tool2"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.Camera4_IO.bAlarm" VarB="API^Term 10 (Command Status Bits)^Subterm 22 (Command Status Bits)^Inputs^Command Status Bits Register3^Warning"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.Camera4_IO.bBusy" VarB="API^Term 10 (Command Status Bits)^Subterm 22 (Command Status Bits)^Inputs^Command Status Bits Register2^Busy"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.Camera4_IO.bError" VarB="API^Term 10 (Command Status Bits)^Subterm 22 (Command Status Bits)^Inputs^Command Status Bits Register3^Error"/>

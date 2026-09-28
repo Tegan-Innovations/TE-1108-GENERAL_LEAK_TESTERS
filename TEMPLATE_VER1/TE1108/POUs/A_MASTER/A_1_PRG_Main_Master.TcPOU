@@ -508,7 +508,7 @@ IF abMachineDefinition[1] THEN
 	stMACHINE.bLeakTest									:= NOT bOnlyHeightTestBypass;
 	stMACHINE.bVisionTest								:= NOT bOnlyHeightTestBypass;
 	stMACHINE.bPuckLocker								:= FALSE; //Renan Added 10Jul26 - Puck Locker
-	stMACHINE.sName										:= 'LT-WH-VI LEAK TEST: FLUID PATH , HEIGHT TEST: FPB WELDING, VISION INSPECTION: EWIS FOAM';
+	stMACHINE.sName										:= ' LT-WH-VI LEAK TEST: FLUID PATH , HEIGHT TEST: FPB WELDING, VISION INSPECTION: EWIS FOAM';
 	stMACHINE.bMachine[1]								:= TRUE;
 	stMACHINE.bMachine[2]								:= FALSE;
 	stMACHINE.bMachine[3]								:= FALSE;

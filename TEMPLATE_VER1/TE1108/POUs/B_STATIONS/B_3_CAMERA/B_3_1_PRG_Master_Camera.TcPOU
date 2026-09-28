@@ -16,7 +16,6 @@ VAR
 	bReady								: BOOL;
 	bDone								: ARRAY [1..2] OF BOOL;
 	bPass								: ARRAY [1..2] OF BOOL;
-	rsPass								: ARRAY [1..2] OF RS;
 	bFail								: ARRAY [1..2] OF BOOL;
 	bTtigger							: ARRAY [1..4] OF BOOL;
 	bTriggerFail						: ARRAY [1..4] OF BOOL;
@@ -303,6 +302,7 @@ CASE stCamera.State OF
 											bFail[2]							:= TRUE;
 										
 										END_IF
+										
 								
 									END_IF
 									
@@ -364,13 +364,25 @@ CASE stCamera.State OF
 									IF bInspectRequest[1] THEN
 										stCycleDataNest1.Camera_Pass := bPass[1];
 										stCycleDataNest1.Camera_Fail := bFail[1];
+										
 									END_IF
 							
 									IF bInspectRequest[2] THEN
 										stCycleDataNest2.Camera_Pass := bPass[2];
 										stCycleDataNest2.Camera_Fail := bFail[2];
 									END_IF
-							
+									
+									IF NOT Camera3_IO.abInspectionResult[2] OR NOT Camera4_IO.abInspectionResult[2] THEN
+											
+										stCycleDataNest2.bCAPBad			:= TRUE;
+											
+									END_IF
+									IF NOT Camera1_IO.abInspectionResult[2] OR NOT Camera2_IO.abInspectionResult[2] THEN
+											
+										stCycleDataNest1.bCAPBad			:= TRUE;
+											
+									END_IF
+									
 									stCamera.State := E_Camera_State.DONE;
 									ctuTriggerCounter.RESET := TRUE;
 							
@@ -487,9 +499,6 @@ IF abMachineDefinition[1] THEN
 	bDone[1]							:= Camera1_IO.bResultReady AND Camera2_IO.bResultReady;
 	bDone[2]							:= Camera3_IO.bResultReady AND Camera4_IO.bResultReady;
 											
-	rsPass[1]( SET := bDone[1] AND (Camera1_IO.bTotalResult = TRUE AND Camera2_IO.bTotalResult = TRUE), RESET1 := (stCamera.State = E_Camera_State.ABORTED) OR (stCamera.State = E_Camera_State.READY));
-	rsPass[2]( SET := bDone[2] AND (Camera3_IO.bTotalResult = TRUE AND Camera4_IO.bTotalResult = TRUE), RESET1 := (stCamera.State = E_Camera_State.ABORTED) OR (stCamera.State = E_Camera_State.READY));
-	
 	bGeneralBusy						:= bBusy[1] OR bBusy[2] OR bBusy[3] OR bBusy[4];
 
 ELSIF abMachineDefinition[2] THEN
@@ -498,9 +507,6 @@ ELSIF abMachineDefinition[2] THEN
 	
 	bDone[1]							:= Camera1_IO.bResultReady;
 	bDone[2]							:= Camera2_IO.bResultReady;
-	
-	rsPass[1]( SET := bDone[1] AND Camera1_IO.bTotalResult = TRUE , RESET1 := (stCamera.State = E_Camera_State.ABORTED) OR (stCamera.State = E_Camera_State.READY));
-	rsPass[2]( SET := bDone[2] AND Camera2_IO.bTotalResult = TRUE , RESET1 := (stCamera.State = E_Camera_State.ABORTED) OR (stCamera.State = E_Camera_State.READY));
 
 	bGeneralBusy						:= bBusy[1] OR bBusy[2];
 
@@ -573,7 +579,7 @@ Camera4_IO.bSetTreshold					:= bCameraSetTreshold[4];
 
 rReset( CLK := stCamera.CMD.bReset, Q => bReset);
 
-
+//bCapInspection							:= 
 ]]></ST>
       </Implementation>
     </Action>
