@@ -526,7 +526,7 @@ E_General_ProcessCycle.IDLE:
 						
 					END_IF
 					
-					eCycleState								:= E_General_ProcessCycle.CLOSE_PROCESS_DOOR;
+					eCycleState								:= E_General_ProcessCycle.PROCESS_FLAGS_DEFINITIONS;
 					
 				END_IF
 				
@@ -559,6 +559,51 @@ E_General_ProcessCycle.IDLE:
 					sMachineMessage 			:= 'Place part in nest 1 to continue';
 					
 				END_IF
+				
+E_General_ProcessCycle.PROCESS_FLAGS_DEFINITIONS:
+				
+				
+				IF stMACHINE.bVisionTest THEN
+					
+					IF bVisionProcessDoneFlag AND (NOT stCycleDataNest1.bCAPBad AND NOT stCycleDataNest2.bCAPBad) THEN
+						
+						eCycleState							:= E_General_ProcessCycle.CLOSE_PROCESS_DOOR; //Renan changed - Buglist n13 08Jul26 | Original: \\E_General_ProcessCycle.EXTEND_PROCESS_CYLINDER;
+					ELSIF stCycleDataNest1.bCAPBad OR stCycleDataNest2.bCAPBad THEN
+
+						eCycleState						:= E_General_ProcessCycle.CAP_BENDED;
+
+					ELSE
+						
+				 		eCycleState						:= E_General_ProcessCycle.CAMERA_INSPECTION;
+						
+					END_IF
+				ELSIF tonWaitExtendCylidner.Q AND NOT stMACHINE.bVisionTest THEN
+
+					eCycleState							:= E_General_ProcessCycle.CLOSE_PROCESS_DOOR; //Renan changed - Buglist n13 08Jul26 | Original: \\E_General_ProcessCycle.EXTEND_PROCESS_CYLINDER;
+					
+				END_IF
+				
+E_General_ProcessCycle.CAP_BENDED:
+
+				IF (stCycleDataNest1.bCAPBad AND bPartPresent[0]) AND (stCycleDataNest2.bCAPBad AND bPartPresent[1]) THEN
+					
+					sMachineMessage := 'CAP bended, Remove parts from both nest';
+				
+				ELSIF (NOT stCycleDataNest1.bCAPBad OR NOT bPartPresent[0]) AND (stCycleDataNest2.bCAPBad AND bPartPresent[1])	THEN
+					
+					sMachineMessage := 'CAP bended, Remove parts from nest RH';
+					
+				ELSIF (stCycleDataNest1.bCAPBad AND bPartPresent[0]) AND NOT (stCycleDataNest2.bCAPBad OR NOT bPartPresent[1]) THEN
+					
+					sMachineMessage := 'CAP bended, Remove parts from nest LH';
+					
+				ELSE 
+					
+					bVisionProcessDoneFlag					:= FALSE;
+					sMachineMessage := '';
+					eCycleState								:= E_General_ProcessCycle.IDLE;
+					
+				END_IF
 			
 E_General_ProcessCycle.CLOSE_PROCESS_DOOR:
 
@@ -575,25 +620,9 @@ E_General_ProcessCycle.WAIT_CLOSE_PROCESS_DOOR:
 				stProcessDoor.CMD.ProcessDoorCMD.CloseDoor	:= FALSE;
 				stProcessDoor.CMD.bExecute					:= FALSE;
 				stProcessDoor.CMD.bAcknowledge				:= TRUE;
-				eCycleState									:= E_General_ProcessCycle.PROCESS_FLAGS_DEFINITIONS;
+				eCycleState									:= E_General_ProcessCycle.PRE_RETRACT_PROCESS_CYLINDER;
 				END_IF
 				
-E_General_ProcessCycle.PROCESS_FLAGS_DEFINITIONS:
-				
-				
-				IF stMACHINE.bVisionTest THEN
-					
-					IF bVisionProcessDoneFlag THEN
-						
-						eCycleState							:= E_General_ProcessCycle.PRE_RETRACT_PROCESS_CYLINDER; //Renan changed - Buglist n13 08Jul26 | Original: \\E_General_ProcessCycle.EXTEND_PROCESS_CYLINDER;
-					ELSE eCycleState						:= E_General_ProcessCycle.CAMERA_INSPECTION;
-						
-					END_IF
-				ELSIF tonWaitExtendCylidner.Q AND NOT stMACHINE.bVisionTest THEN
-
-					eCycleState							:= E_General_ProcessCycle.PRE_RETRACT_PROCESS_CYLINDER; //Renan changed - Buglist n13 08Jul26 | Original: \\E_General_ProcessCycle.EXTEND_PROCESS_CYLINDER;
-					
-				END_IF
 				
 (* Renan added - Buglist n13 - 08Jul26 *)				
 E_General_ProcessCycle.PRE_RETRACT_PROCESS_CYLINDER:		
@@ -1315,7 +1344,8 @@ dw_T09_EL2809.qIndicatorLED2_Red	:= stCycleDataNest2.bFail;
 dw_T09_EL2809.qIndicatorLED2_Green	:= stCycleDataNest2.bPass;	
 
 IF 	(stMachineStatus.eMachineState = E_MachineState.SYSTEM_AUTO_CYCLE) AND NOT ((eCycleState	= E_General_ProcessCycle.IDLE) OR (eCycleState	= E_General_ProcessCycle.WAIT_REJECT_PART) 
-	OR (eCycleState	= E_General_ProcessCycle.NEST_CLEARING) OR (eCycleState	= E_General_ProcessCycle.REJECT_CHUTE_FULL) OR (eCycleState	= E_General_ProcessCycle.PUCK_DEFINITION)) THEN
+	OR (eCycleState	= E_General_ProcessCycle.NEST_CLEARING) OR (eCycleState	= E_General_ProcessCycle.REJECT_CHUTE_FULL) OR (eCycleState	= E_General_ProcessCycle.PUCK_DEFINITION)
+	OR (eCycleState	= E_General_ProcessCycle.CAP_BENDED)) THEN
 	
 
 	bPartPresent[0]					:= 	bProcessedPart[0];
