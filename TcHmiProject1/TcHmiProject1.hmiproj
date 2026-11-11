@@ -168,6 +168,9 @@
     <Content Include=".eslintrc.json">
       <Visible>false</Visible>
     </Content>
+    <Content Include="Contents\CSS_JAVA\autologouttimer.js">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Contents\CSS_JAVA\Enable buttons.js">
       <SubType>Content</SubType>
     </Content>
@@ -400,6 +403,9 @@
     <Content Include="Contents\Settings\Calibration_Set1.content">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Contents\Settings\GeneralSettings.content">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Contents\Settings\NestOffset.content">
       <SubType>Content</SubType>
     </Content>
@@ -413,9 +419,6 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="Contents\Settings\ProbePositions1.content">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Contents\Settings\EnableNests.content">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Contents\Settings\PuckLockerMode.content">

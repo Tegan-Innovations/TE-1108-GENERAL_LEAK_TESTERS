@@ -2,6 +2,15 @@
 <TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.22">
 	<DataTypes>
 		<DataType>
+			<Name GUID="{481A0C15-D2DB-59F6-F498-C30AA9C1998C}" IecBaseType="true" AutoDeleteType="true">ARRAY [0..7] OF BOOL</Name>
+			<BitSize>64</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>8</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
 			<Name GUID="{22728B82-A99E-1178-70C3-33731C966BD6}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..10] OF BOOL</Name>
 			<BitSize>80</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
@@ -26,15 +35,6 @@
 			<ArrayInfo>
 				<LBound>1</LBound>
 				<Elements>4</Elements>
-			</ArrayInfo>
-		</DataType>
-		<DataType>
-			<Name GUID="{481A0C15-D2DB-59F6-F498-C30AA9C1998C}" IecBaseType="true" AutoDeleteType="true">ARRAY [0..7] OF BOOL</Name>
-			<BitSize>64</BitSize>
-			<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
-			<ArrayInfo>
-				<LBound>0</LBound>
-				<Elements>8</Elements>
 			</ArrayInfo>
 		</DataType>
 		<DataType>
@@ -1169,472 +1169,9 @@
 		</System>
 		<Plc>
 			<Project GUID="{997013A6-75D1-424B-98F5-A30289B2B96E}" Name="TE1108" PrjFilePath="TE1108\TE1108.plcproj" TmcFilePath="TE1108\TE1108.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{2DCCCCB5-2C85-B33C-4236-B555F1A2832C}" TmcPath="TE1108\TE1108.tmc">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{63583801-09C1-ACD7-771A-BAC40D0487C2}" TmcPath="TE1108\TE1108.tmc">
 					<Name>TE1108 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
-					<Vars VarGrpType="2" AreaNo="1">
-						<Name>PlcTask Outputs</Name>
-						<Var>
-							<Name>GVL_IO.Camera1_IO.bTrigger</Name>
-							<Comment><![CDATA[////////////////////////////////////////////////////////////OUTPUTS////////////////////////////////////////////////////////////////////]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera1_IO.bReset</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera1_IO.bSetTreshold</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera1_IO.bResultReadyAck</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera1_IO.bSettingNo</Name>
-							<Type>UINT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera1_IO.bSettingVal</Name>
-							<Type>UDINT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera1_IO.bResetStatistics</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera1_IO.bClearBuffer</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera2_IO.bTrigger</Name>
-							<Comment><![CDATA[////////////////////////////////////////////////////////////OUTPUTS////////////////////////////////////////////////////////////////////]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera2_IO.bReset</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera2_IO.bSetTreshold</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera2_IO.bResultReadyAck</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera2_IO.bSettingNo</Name>
-							<Type>UINT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera2_IO.bSettingVal</Name>
-							<Type>UDINT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera2_IO.bResetStatistics</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera2_IO.bClearBuffer</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera3_IO.bTrigger</Name>
-							<Comment><![CDATA[////////////////////////////////////////////////////////////OUTPUTS////////////////////////////////////////////////////////////////////]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera3_IO.bReset</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera3_IO.bSetTreshold</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera3_IO.bResultReadyAck</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera3_IO.bSettingNo</Name>
-							<Type>UINT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera3_IO.bSettingVal</Name>
-							<Type>UDINT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera3_IO.bResetStatistics</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera3_IO.bClearBuffer</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera4_IO.bTrigger</Name>
-							<Comment><![CDATA[////////////////////////////////////////////////////////////OUTPUTS////////////////////////////////////////////////////////////////////]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera4_IO.bReset</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera4_IO.bSetTreshold</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera4_IO.bResultReadyAck</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera4_IO.bSettingNo</Name>
-							<Type>UINT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera4_IO.bSettingVal</Name>
-							<Type>UDINT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera4_IO.bResetStatistics</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Camera4_IO.bClearBuffer</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T06_EL2904.qEnableAirSupply_PSR1</Name>
-							<Comment><![CDATA[ EL2904 channel 1]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T06_EL2904.qResetAirSupply_PSR2</Name>
-							<Comment><![CDATA[ EL2904 channel 2]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T06_EL2904.qLockMainDoor</Name>
-							<Comment><![CDATA[ EL2904 channel 3 			]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T06_EL2904.qLockProcessCylinder</Name>
-							<Comment><![CDATA[ EL2904 channel 4 ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T09_EL2809.qResetButtonLED</Name>
-							<Comment><![CDATA[ EL2809 channel 1]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T09_EL2809.qStartButtonLED</Name>
-							<Comment><![CDATA[ EL2809 channel 2]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T09_EL2809.qOpenProcessDoor</Name>
-							<Comment><![CDATA[ EL2809 channel 3 			]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T09_EL2809.qCloseProcessDoor</Name>
-							<Comment><![CDATA[ EL2809 channel 4 ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T09_EL2809.qRetractProcessCylinder</Name>
-							<Comment><![CDATA[ EL2809 channel 5]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T09_EL2809.qExtendProcessCylinder</Name>
-							<Comment><![CDATA[ EL2809 channel 6 	]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T09_EL2809.qPanelLightLED</Name>
-							<Comment><![CDATA[ EL2809 channel 7	]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T09_EL2809.qIndicatorLED1_Red</Name>
-							<Comment><![CDATA[ EL2809 channel 8	]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T09_EL2809.qIndicatorLED1_Green</Name>
-							<Comment><![CDATA[ EL2809 channel 9]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T09_EL2809.qIndicatorLED2_Red</Name>
-							<Comment><![CDATA[ EL2809 channel 10   	]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T09_EL2809.qIndicatorLED2_Green</Name>
-							<Comment><![CDATA[ EL2809 channel 11	]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T09_EL2809.qiEL2809_Ch12</Name>
-							<Comment><![CDATA[ EL2809 channel 12 ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T09_EL2809.qiEL2809_Ch13</Name>
-							<Comment><![CDATA[ EL2809 channel 13 ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T09_EL2809.qiEL2809_Ch14</Name>
-							<Comment><![CDATA[ EL2809 channel 14 ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T09_EL2809.qiEL2809_Ch15</Name>
-							<Comment><![CDATA[ EL2809 channel 15 ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T09_EL2809.qPuckLockerPinCommand</Name>
-							<Comment><![CDATA[ EL2809 channel 16]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.stTwinSAFE.iAirPressureMaxValue</Name>
-							<Comment><![CDATA[////////////////////////////////////////////////////////////////////////Safety OUTPUTS///////////////////////////////////////////////////////////////////////////////////////]]></Comment>
-							<Type>UINT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.stTwinSAFE.iAirPressureMinValue</Name>
-							<Type>UINT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.stTwinSAFE.iAirSupplyMeasurement</Name>
-							<Type>UINT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.stTwinSAFE.iMachineStopped</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.stTwinSAFE.iProcessDoorClosing</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.stTwinSAFE.iProcessDoorClosedCondition</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.stTwinSAFE.iSafetyErrorAcknowledge</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.stTwinSAFE.iRunSafety</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.stTwinSAFE.iInitSafety</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.stTwinSAFE.iMachineHoming_Manual</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.stTwinSAFE.iPuckError</Name>
-							<Comment><![CDATA[Renan Added 10Jul26 - Puck Locker]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bOutput1</Name>
-							<Comment><![CDATA[OUTPUTS]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bOutput2</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bOutput3</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bOutput4</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bOutput5</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bOutput6</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bOutput7</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bOutput8</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bOutput9</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bOutput10</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bOutput11</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bOutput12</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bOutput13</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bOutput14</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bOutput15</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bOutput16</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bChangeProgram</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bVentHalt</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bReset</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bStop</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bStart</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bSetProgram</Name>
-							<Type GUID="{481A0C15-D2DB-59F6-F498-C30AA9C1998C}">ARRAY [0..7] OF BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bOutput1</Name>
-							<Comment><![CDATA[OUTPUTS]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bOutput2</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bOutput3</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bOutput4</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bOutput5</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bOutput6</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bOutput7</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bOutput8</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bOutput9</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bOutput10</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bOutput11</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bOutput12</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bOutput13</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bOutput14</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bOutput15</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bOutput16</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bChangeProgram</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bVentHalt</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bReset</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bStop</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bStart</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bSetProgram</Name>
-							<Type GUID="{481A0C15-D2DB-59F6-F498-C30AA9C1998C}">ARRAY [0..7] OF BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.Probes.abPresetProbe</Name>
-							<Type>DINT</Type>
-						</Var>
-					</Vars>
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
 						<Var>
@@ -1802,6 +1339,91 @@
 							<Type GUID="{22728B82-A99E-1178-70C3-33731C966BD6}">ARRAY [1..10] OF BOOL</Type>
 						</Var>
 						<Var>
+							<Name>GVL_IO.dw_T08_EL1809.iStartButoon</Name>
+							<Comment><![CDATA[ EL1809 channel 1]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T08_EL1809.iStopButton</Name>
+							<Comment><![CDATA[ EL1809 channel 2]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T08_EL1809.iUP_OK</Name>
+							<Comment><![CDATA[ EL1809 channel 3]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T08_EL1809.iUS_OK</Name>
+							<Comment><![CDATA[ EL1809 channel 4]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T08_EL1809.iPartPresentNest1</Name>
+							<Comment><![CDATA[ EL1809 channel 5 		     			]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T08_EL1809.iPartPresentNest2</Name>
+							<Comment><![CDATA[ EL1809 channel 6]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T08_EL1809.iUS_Cameras_OK</Name>
+							<Comment><![CDATA[ EL1809 channel 7 ]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T08_EL1809.iEL1809_Ch8</Name>
+							<Comment><![CDATA[ EL1809 channel 8]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T08_EL1809.iEL1809_Ch9</Name>
+							<Comment><![CDATA[ EL1809 channel 9]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T08_EL1809.iProcessCylinderExtended</Name>
+							<Comment><![CDATA[ EL1809 channel 10]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T08_EL1809.iRejectSensor</Name>
+							<Comment><![CDATA[ EL1809 channel 11]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T08_EL1809.iEL1809_Ch12</Name>
+							<Comment><![CDATA[ EL1809 channel 12	   ]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T08_EL1809.iEL1809_Ch13</Name>
+							<Comment><![CDATA[ EL1809 channel 13   ]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T08_EL1809.iEL1809_Ch14</Name>
+							<Comment><![CDATA[ EL1809 channel 14 ]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T08_EL1809.iPuckSensorUp</Name>
+							<Comment><![CDATA[ EL1809 channel 15  ]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T08_EL1809.iPuckSensorDown</Name>
+							<Comment><![CDATA[ EL1809 channel 16  	]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T08_EL1809.stTerminalInfo.nTerminal_State</Name>
+							<Comment><![CDATA[ Terminal State from IO Terminal Info Data]]></Comment>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
 							<Name>GVL_IO.dw_T01_EK1100.stTerminalInfo.nTerminal_State</Name>
 							<Comment><![CDATA[ Terminal State from IO Terminal Info Data]]></Comment>
 							<Type>UINT</Type>
@@ -1913,91 +1535,6 @@
 						</Var>
 						<Var>
 							<Name>GVL_IO.dw_T07_EL9410.stTerminalInfo.nTerminal_State</Name>
-							<Comment><![CDATA[ Terminal State from IO Terminal Info Data]]></Comment>
-							<Type>UINT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T08_EL1809.iStartButoon</Name>
-							<Comment><![CDATA[ EL1809 channel 1]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T08_EL1809.iStopButton</Name>
-							<Comment><![CDATA[ EL1809 channel 2]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T08_EL1809.iUP_OK</Name>
-							<Comment><![CDATA[ EL1809 channel 3]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T08_EL1809.iUS_OK</Name>
-							<Comment><![CDATA[ EL1809 channel 4]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T08_EL1809.iPartPresentNest1</Name>
-							<Comment><![CDATA[ EL1809 channel 5 		     			]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T08_EL1809.iPartPresentNest2</Name>
-							<Comment><![CDATA[ EL1809 channel 6]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T08_EL1809.iEL1809_Ch7</Name>
-							<Comment><![CDATA[ EL1809 channel 7 ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T08_EL1809.iEL1809_Ch8</Name>
-							<Comment><![CDATA[ EL1809 channel 8]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T08_EL1809.iEL1809_Ch9</Name>
-							<Comment><![CDATA[ EL1809 channel 9]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T08_EL1809.iProcessCylinderExtended</Name>
-							<Comment><![CDATA[ EL1809 channel 10]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T08_EL1809.iRejectSensor</Name>
-							<Comment><![CDATA[ EL1809 channel 11]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T08_EL1809.iEL1809_Ch12</Name>
-							<Comment><![CDATA[ EL1809 channel 12	   ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T08_EL1809.iEL1809_Ch13</Name>
-							<Comment><![CDATA[ EL1809 channel 13   ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T08_EL1809.iEL1809_Ch14</Name>
-							<Comment><![CDATA[ EL1809 channel 14 ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T08_EL1809.iPuckSensorUp</Name>
-							<Comment><![CDATA[ EL1809 channel 15  ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T08_EL1809.iPuckSensorDown</Name>
-							<Comment><![CDATA[ EL1809 channel 16  	]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.dw_T08_EL1809.stTerminalInfo.nTerminal_State</Name>
 							<Comment><![CDATA[ Terminal State from IO Terminal Info Data]]></Comment>
 							<Type>UINT</Type>
 						</Var>
@@ -2648,6 +2185,469 @@
 							<Name>GVL_IO.Probes.stTerminalInfo.nTerminal_State</Name>
 							<Comment><![CDATA[ Terminal State from IO Terminal Info Data]]></Comment>
 							<Type>UINT</Type>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2" AreaNo="1">
+						<Name>PlcTask Outputs</Name>
+						<Var>
+							<Name>GVL_IO.Camera1_IO.bTrigger</Name>
+							<Comment><![CDATA[////////////////////////////////////////////////////////////OUTPUTS////////////////////////////////////////////////////////////////////]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera1_IO.bReset</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera1_IO.bSetTreshold</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera1_IO.bResultReadyAck</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera1_IO.bSettingNo</Name>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera1_IO.bSettingVal</Name>
+							<Type>UDINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera1_IO.bResetStatistics</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera1_IO.bClearBuffer</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera2_IO.bTrigger</Name>
+							<Comment><![CDATA[////////////////////////////////////////////////////////////OUTPUTS////////////////////////////////////////////////////////////////////]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera2_IO.bReset</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera2_IO.bSetTreshold</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera2_IO.bResultReadyAck</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera2_IO.bSettingNo</Name>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera2_IO.bSettingVal</Name>
+							<Type>UDINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera2_IO.bResetStatistics</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera2_IO.bClearBuffer</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera3_IO.bTrigger</Name>
+							<Comment><![CDATA[////////////////////////////////////////////////////////////OUTPUTS////////////////////////////////////////////////////////////////////]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera3_IO.bReset</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera3_IO.bSetTreshold</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera3_IO.bResultReadyAck</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera3_IO.bSettingNo</Name>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera3_IO.bSettingVal</Name>
+							<Type>UDINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera3_IO.bResetStatistics</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera3_IO.bClearBuffer</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera4_IO.bTrigger</Name>
+							<Comment><![CDATA[////////////////////////////////////////////////////////////OUTPUTS////////////////////////////////////////////////////////////////////]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera4_IO.bReset</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera4_IO.bSetTreshold</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera4_IO.bResultReadyAck</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera4_IO.bSettingNo</Name>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera4_IO.bSettingVal</Name>
+							<Type>UDINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera4_IO.bResetStatistics</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Camera4_IO.bClearBuffer</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T06_EL2904.qEnableAirSupply_PSR1</Name>
+							<Comment><![CDATA[ EL2904 channel 1]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T06_EL2904.qResetAirSupply_PSR2</Name>
+							<Comment><![CDATA[ EL2904 channel 2]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T06_EL2904.qLockMainDoor</Name>
+							<Comment><![CDATA[ EL2904 channel 3 			]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T06_EL2904.qLockProcessCylinder</Name>
+							<Comment><![CDATA[ EL2904 channel 4 ]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T09_EL2809.qResetButtonLED</Name>
+							<Comment><![CDATA[ EL2809 channel 1]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T09_EL2809.qStartButtonLED</Name>
+							<Comment><![CDATA[ EL2809 channel 2]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T09_EL2809.qOpenProcessDoor</Name>
+							<Comment><![CDATA[ EL2809 channel 3 			]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T09_EL2809.qCloseProcessDoor</Name>
+							<Comment><![CDATA[ EL2809 channel 4 ]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T09_EL2809.qRetractProcessCylinder</Name>
+							<Comment><![CDATA[ EL2809 channel 5]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T09_EL2809.qExtendProcessCylinder</Name>
+							<Comment><![CDATA[ EL2809 channel 6 	]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T09_EL2809.qPanelLightLED</Name>
+							<Comment><![CDATA[ EL2809 channel 7	]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T09_EL2809.qIndicatorLED1_Red</Name>
+							<Comment><![CDATA[ EL2809 channel 8	]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T09_EL2809.qIndicatorLED1_Green</Name>
+							<Comment><![CDATA[ EL2809 channel 9]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T09_EL2809.qIndicatorLED2_Red</Name>
+							<Comment><![CDATA[ EL2809 channel 10   	]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T09_EL2809.qIndicatorLED2_Green</Name>
+							<Comment><![CDATA[ EL2809 channel 11	]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T09_EL2809.qiEL2809_Ch12</Name>
+							<Comment><![CDATA[ EL2809 channel 12 ]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T09_EL2809.qiEL2809_Ch13</Name>
+							<Comment><![CDATA[ EL2809 channel 13 ]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T09_EL2809.qiEL2809_Ch14</Name>
+							<Comment><![CDATA[ EL2809 channel 14 ]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T09_EL2809.qiEL2809_Ch15</Name>
+							<Comment><![CDATA[ EL2809 channel 15 ]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.dw_T09_EL2809.qPuckLockerPinCommand</Name>
+							<Comment><![CDATA[ EL2809 channel 16]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.stTwinSAFE.iAirPressureMaxValue</Name>
+							<Comment><![CDATA[////////////////////////////////////////////////////////////////////////Safety OUTPUTS///////////////////////////////////////////////////////////////////////////////////////]]></Comment>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.stTwinSAFE.iAirPressureMinValue</Name>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.stTwinSAFE.iAirSupplyMeasurement</Name>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.stTwinSAFE.iMachineStopped</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.stTwinSAFE.iProcessDoorClosing</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.stTwinSAFE.iProcessDoorClosedCondition</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.stTwinSAFE.iSafetyErrorAcknowledge</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.stTwinSAFE.iRunSafety</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.stTwinSAFE.iInitSafety</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.stTwinSAFE.iMachineHoming_Manual</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.stTwinSAFE.iPuckError</Name>
+							<Comment><![CDATA[Renan Added 10Jul26 - Puck Locker]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bOutput1</Name>
+							<Comment><![CDATA[OUTPUTS]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bOutput2</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bOutput3</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bOutput4</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bOutput5</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bOutput6</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bOutput7</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bOutput8</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bOutput9</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bOutput10</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bOutput11</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bOutput12</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bOutput13</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bOutput14</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bOutput15</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bOutput16</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bChangeProgram</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bVentHalt</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bReset</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bStop</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bStart</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester1_IO.sti28General_I_O.bSetProgram</Name>
+							<Type GUID="{481A0C15-D2DB-59F6-F498-C30AA9C1998C}">ARRAY [0..7] OF BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bOutput1</Name>
+							<Comment><![CDATA[OUTPUTS]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bOutput2</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bOutput3</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bOutput4</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bOutput5</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bOutput6</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bOutput7</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bOutput8</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bOutput9</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bOutput10</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bOutput11</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bOutput12</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bOutput13</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bOutput14</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bOutput15</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bOutput16</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bChangeProgram</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bVentHalt</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bReset</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bStop</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bStart</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.LeakTester2_IO.sti28General_I_O.bSetProgram</Name>
+							<Type GUID="{481A0C15-D2DB-59F6-F498-C30AA9C1998C}">ARRAY [0..7] OF BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.Probes.abPresetProbe</Name>
+							<Type>DINT</Type>
 						</Var>
 					</Vars>
 					<UnrestoredVarLinks ImportTime="2026-02-16T14:24:37">
@@ -13379,10 +13379,7 @@ Submodule Info: Barcode_data
 		</Io>
 	</Project>
 	<Mappings>
-		<MappingInfo Identifier="{00000000-2001-0850-0020-500810000403}" Id="#x02030040"/>
-		<MappingInfo Identifier="{00000000-2001-0850-0020-500820000403}" Id="#x02030020"/>
-		<MappingInfo Identifier="{00000000-2001-0850-0020-500831000403}" Id="#x02030030"/>
-		<MappingInfo Identifier="{03040020-0020-0304-2000-040320000403}" Id="#x02030010" Watchdog="04000000040000000400000004000000"/>
+		<MappingInfo Identifier="{00000000-0020-0304-2000-040320000403}" Id="#x02030010"/>
 		<OwnerA Name="TIID^Device1(EtherCAT)">
 			<OwnerB Name="TIID^Device1(EtherCAT)^Term 1 (EK1100)^Term 11 (EL1918)">
 				<Link VarA="Term 1 (EK1100)^Term 3 (EL6910)^ConnectionInputs^Message_38 TxPDO" VarB="Module 1 (FSOE)^FSoE Outputs^FSOE"/>
@@ -13508,6 +13505,7 @@ Submodule Info: Barcode_data
 				<Link VarA="PlcTask Inputs^GVL_IO.dw_T08_EL1809.iStartButoon" VarB="Channel 1^Input"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.dw_T08_EL1809.iStopButton" VarB="Channel 2^Input"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.dw_T08_EL1809.iUP_OK" VarB="Channel 3^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.dw_T08_EL1809.iUS_Cameras_OK" VarB="Channel 7^Input"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.dw_T08_EL1809.iUS_OK" VarB="Channel 4^Input"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.dw_T08_EL1809.stTerminalInfo.nTerminal_State" VarB="InfoData^State"/>
 			</OwnerB>
