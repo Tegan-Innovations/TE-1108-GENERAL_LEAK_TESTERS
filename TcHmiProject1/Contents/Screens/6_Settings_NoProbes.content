@@ -30,7 +30,7 @@
     "Name": "Settings",
     "children": [
       {
-        "Name": "Enable Nests"
+        "Name": "General Settings"
       }
     ]
   }
@@ -156,7 +156,7 @@
             "caseValue": {
               "objectType": "StaticValue",
               "valueType": "tchmi:general#/definitions/Any",
-              "value": "Enable Nests"
+              "value": "General Settings"
             },
             "actions": [
               {
@@ -166,7 +166,7 @@
                 "value": {
                   "objectType": "StaticValue",
                   "valueType": "tchmi:general#/definitions/DINT",
-                  "value": "Contents/Settings/EnableNests.content"
+                  "value": "Contents/Settings/GeneralSettings.content"
                 },
                 "asyncWait": true
               }

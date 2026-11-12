@@ -460,7 +460,7 @@ bNest1StartOK := (NOT bNest1Flag) OR bPartPresentNest1;
 bNest2StartOK := (NOT bNest2Flag) OR bPartPresentNest2;
 (*\Renan Added - Buglist n6 - 08Jul26 *)
 
-bStartProcessCondition := bTwoHandsSignal AND bPartPresentNest1 AND bPartPresentNest2 AND (bNest1Flag OR bNest2Flag);
+bStartProcessCondition := bTwoHandsSignal AND (bPartPresentNest1 OR (NOT bNest1Flag AND NOT abMachineDefinition[3])) AND (bPartPresentNest2 OR (NOT bNest2Flag AND NOT abMachineDefinition[3])) AND (bNest1Flag OR bNest2Flag);
 
 IF rFirstAutoCycle.Q THEN
 	eCycleState												:= E_General_ProcessCycle.RESET_ALL_CMD;
@@ -509,7 +509,7 @@ E_General_ProcessCycle.RESET_ALL_CMD:
 E_General_ProcessCycle.IDLE:
 
 				//start cycle
-				IF bStartProcessCondition AND bPartPresent[0] AND bPartPresent[1] AND bPuckLockerReadyToStart THEN (*Renan added - Puck Locker Bug - 08Jul26*) //Original: IF bStartProcessCondition AND NOT bProcessedPart[0] AND NOT bProcessedPart[1] THEN
+				IF bStartProcessCondition AND bPuckLockerReadyToStart THEN (*Renan added - Puck Locker Bug - 08Jul26*) //Original: IF bStartProcessCondition AND NOT bProcessedPart[0] AND NOT bProcessedPart[1] THEN
 					
 					MEMSET( destAddr := ADR(stCycleDataNest1), fillByte := 0, n := SIZEOF(stCycleDataNest1));
 					MEMSET( destAddr := ADR(stCycleDataNest2), fillByte := 0, n := SIZEOF(stCycleDataNest2));
@@ -542,19 +542,19 @@ E_General_ProcessCycle.IDLE:
 						
 					END_IF					
 				
-				ELSIF  bPuckLockerReadyToStart AND bPartPresent[0] AND bPartPresent[1] THEN
+				ELSIF  bPuckLockerReadyToStart AND (bPartPresent[0] OR (NOT bNest1Flag AND NOT abMachineDefinition[3])) AND (bPartPresent[1] OR (NOT bNest2Flag AND NOT abMachineDefinition[3])) THEN
 					
 					sMachineMessage := 'trigger both safety buttons to start cycle';
 					
-				ELSIF bPuckLockerReadyToStart AND ( NOT bPartPresent[0] AND NOT bPartPresent[1]) THEN
+				ELSIF bPuckLockerReadyToStart AND ( (NOT bPartPresent[0] AND (bNest1Flag OR abMachineDefinition[3])) AND (NOT bPartPresent[1] AND (bNest2Flag OR abMachineDefinition[3]))) THEN
 					
-					sMachineMessage 			:= 'Place parts to continue';
+					sMachineMessage 			:= 'Place parts to continue ';
 					
-				ELSIF bPuckLockerReadyToStart AND ( bPartPresent[0] AND NOT bPartPresent[1]) THEN
+				ELSIF bPuckLockerReadyToStart AND (( bPartPresent[0] OR (NOT bNest1Flag AND NOT abMachineDefinition[3])) AND NOT bPartPresent[1]) THEN
 					
 					sMachineMessage 			:= 'Place part in nest 2 to continue';
 				
-				ELSIF bPuckLockerReadyToStart AND ( NOT bPartPresent[0] AND bPartPresent[1]) THEN
+				ELSIF bPuckLockerReadyToStart AND ( NOT bPartPresent[0] AND (bPartPresent[1] OR (NOT bNest2Flag AND abMachineDefinition[3]))) THEN
 					
 					sMachineMessage 			:= 'Place part in nest 1 to continue';
 					
